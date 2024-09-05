@@ -1,0 +1,229 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Thank you for your donation!</title>
+    <link rel="icon" href="{% static 'images/logo.png' %}" type="image/x-icon">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link
+        href="https://fonts.googleapis.com/css2?family=Edu+VIC+WA+NT+Beginner:wght@400..700&family=Lato:ital,wght@0,100;0,300;0,400;0,700;0,900;1,100;1,300;1,400;1,700;1,900&family=Oswald:wght@200..700&family=Source+Serif+4:ital,opsz,wght@0,8..60,200..900;1,8..60,200..900&display=swap"
+        rel="stylesheet">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.1/dist/js/bootstrap.bundle.min.js"></script>
+    <link href="https://fonts.googleapis.com/css2?family=Lobster&family=Open+Sans:wght@400;600&display=swap"
+        rel="stylesheet">
+    <link
+        href="https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,100;0,300;0,400;0,500;0,700;0,900;1,100;1,300;1,400;1,500;1,700;1,900&display=swap"
+        rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="{% static 'css/main.css' %}">
+
+    <style>
+        body {
+            background-color: #cff1d3;
+        }
+
+      
+        
+
+    </style>
+</head>
+
+<!-- Navbar -->
+<nav class="navbar navbar-expand-lg navbar-light bg-light">
+    <div class="container-fluid">
+        <a class="navbar-brand" href="{% url 'homePage' %}">
+            <img src="{% static 'images/logo.png' %}" alt="Fur Love Logo" class="img-fluid" style="max-height: 50px;">
+            Fur Love
+        </a>
+        <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav"
+            aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+            <span class="navbar-toggler-icon"></span>
+        </button>
+
+        <div class="collapse navbar-collapse" id="navbarNav">
+            <ul class="navbar-nav ms-auto">
+                <li class="nav-item">
+                    <a class="nav-link" href="{% url 'homePage' %}">Home</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="{% url 'aboutPage' %}">About Us</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="{% url 'adoptionPage' %}">Find a Pet</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="{% url 'contactPage' %}">Contact Us</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="{% url 'volunteerPage' %}">Volunteer</a>
+                </li>
+            </ul>
+        </div>
+    </div>
+</nav>
+
+<!-- Thank You Card -->
+<section class="thank-you-section">
+    <div class="thank-you-card">
+        <div class="thank-you-icon">
+            <i class="fa fa-heart"></i>
+        </div>
+        <h1 class="thank-you-title">Thank You!</h1>
+        <p class="thank-you-description">Your support means the world to us. We’re excited about the positive change we
+            can achieve together!</p>
+        <div class="thank-you-buttons">
+            <a href="{% url 'homePage' %}" class="btn btn-accent btn-lg px-4 py-2">Home</a>
+            <a href="{% url 'donate' %}" class="btn btn-accent btn-lg px-4 py-2">Donate Again</a>
+        </div>
+    </div>
+</section>
+
+<!-- Info Section -->
+
+<section class="impact-section">
+    <h2 class="impact-title">See the Impact</h2>
+    <p class="impact-introduction">Your generosity drives real change. Here’s how we’re making a difference with your
+        support:</p>
+
+    <div class="impact-details">
+        <div class="impact-item">
+            <div class="impact-icon">
+                <img src="{% static 'images/community.jpg' %}" alt="Community Initiatives Icon">
+            </div>
+            <div class="impact-info">
+                <h3 class="impact-heading">Community Initiatives</h3>
+                <p class="impact-description">Empowering communities through impactful projects and events that create
+                    lasting benefits.</p>
+            </div>
+        </div>
+
+        <div class="impact-item">
+            <div class="impact-icon">
+                <img src="{% static 'images/resources.jpg' %}" alt="Essential Resources Icon">
+            </div>
+            <div class="impact-info">
+                <h3 class="impact-heading">Essential Resources</h3>
+                <p class="impact-description">Providing crucial resources and support to ensure everyone has what they
+                    need.</p>
+            </div>
+        </div>
+
+        <div class="impact-item">
+            <div class="impact-icon">
+                <img src="{% static 'images/goals.jpg' %}" alt="Future Goals Icon">
+            </div>
+            <div class="impact-info">
+                <h3 class="impact-heading">Future Goals</h3>
+                <p class="impact-description">Investing in future projects to extend our impact and achieve greater
+                    success.</p>
+            </div>
+        </div>
+
+        <!-- Additional Impact Items -->
+        <div class="impact-item">
+            <div class="impact-icon">
+                <img src="{% static 'images/education.jpg' %}" alt="Educational Programs Icon">
+            </div>
+            <div class="impact-info">
+                <h3 class="impact-heading">Educational Programs</h3>
+                <p class="impact-description">Supporting educational programs that foster learning and growth within our
+                    community.</p>
+            </div>
+        </div>
+
+        <div class="impact-item">
+            <div class="impact-icon">
+                <img src="{% static 'images/environment.jpg' %}" alt="Environmental Efforts Icon">
+            </div>
+            <div class="impact-info">
+                <h3 class="impact-heading">Environmental Efforts</h3>
+                <p class="impact-description">Contributing to environmental preservation and sustainability through
+                    various initiatives.</p>
+            </div>
+        </div>
+    </div>
+
+    <!-- Events -->
+    <section class="events-section">
+        <h2 class="events-title">Upcoming Events</h2>
+        <p class="events-description">Join us for exciting events and witness the positive results of your support. Stay tuned for updates!</p>
+        
+        <div class="events-container">
+            <div class="event-card">
+                <img src="{% static 'images/event1.jpg' %}" alt="Event 1" class="event-image">
+                <div class="event-info">
+                    <h4 class="event-name">Community Clean-Up</h4>
+                    <p class="event-date">September 15, 2024</p>
+                    <p class="event-details">Help us clean up the local park and make a difference in our community.</p>
+                </div>
+            </div>
+    
+            <div class="event-card">
+                <img src="{% static 'images/event2.jpg' %}" alt="Event 2" class="event-image">
+                <div class="event-info">
+                    <h4 class="event-name">Charity Run</h4>
+                    <p class="event-date">October 10, 2024</p>
+                    <p class="event-details">Join us for a charity run and help raise funds for a good cause.</p>
+                </div>
+            </div>
+    
+            <div class="event-card">
+                <img src="{% static 'images/event3.jpg' %}" alt="Event 3" class="event-image">
+                <div class="event-info">
+                    <h4 class="event-name">Fundraising Gala</h4>
+                    <p class="event-date">November 5, 2024</p>
+                    <p class="event-details">Attend our fundraising gala and enjoy an evening of entertainment and giving back.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+    
+
+
+
+<!-- Footer Section -->
+<footer class="bg-light text-center text-lg-start mt-5">
+    <div class="container p-4">
+        <div class="row">
+
+            <!-- Footer Content Left -->
+            <div class="col-lg-6 col-md-12 mb-4 mb-md-0">
+                <h5 class="text-uppercase">Fur Love</h5>
+                <p class="footer-text">
+                    Compassionate care, personalized support, and commitment to matching pets with their perfect forever
+                    homes.
+                </p>
+            </div>
+
+            <!-- Footer Content Right -->
+            <div class="col-lg-6 col-md-12 d-flex justify-content-lg-end mb-4 mb-md-0">
+                <div>
+                    <h5 class="text-uppercase">Follow Us</h5>
+                    <a href="https://www.instagram.com" target="_blank">
+                        <img src="{% static 'images/instagram.png' %}" alt="Instagram" width="30" height="30"
+                            class="me-3">
+                    </a>
+                    <a href="https://www.twitter.com" target="_blank">
+                        <img src="{% static 'images/twitter.png' %}" alt="Twitter" width="30" height="30" class="me-3">
+                    </a>
+                    <a href="https://www.linkedin.com" target="_blank">
+                        <img src="{% static 'images/linkedin.png' %}" alt="LinkedIn" width="30" height="30">
+                    </a>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div class="text-center p-3">
+        © 2024 Fur Love | All Rights Reserved
+    </div>
+</footer>
+
+</body>
+
+</html>

@@ -1,0 +1,249 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Pet Rehabilitation</title>
+    <link rel="icon" href="{% static 'images/logo.png' %}" type="image/x-icon">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link
+        href="https://fonts.googleapis.com/css2?family=Edu+VIC+WA+NT+Beginner:wght@400..700&family=Lato:ital,wght@0,100;0,300;0,400;0,700;0,900;1,100;1,300;1,400;1,700;1,900&family=Oswald:wght@200..700&family=Source+Serif+4:ital,opsz,wght@0,8..60,200..900;1,8..60,200..900&display=swap"
+        rel="stylesheet">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.1/dist/js/bootstrap.bundle.min.js"></script>
+    <link href="https://fonts.googleapis.com/css2?family=Lobster&family=Open+Sans:wght@400;600&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,100;0,300;0,400;0,500;0,700;0,900;1,100;1,300;1,400;1,500;1,700;1,900&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="{% static 'css/main.css' %}">
+
+ <style>
+body {
+    background-color: #d8e0e3;
+}
+
+.navbar {
+    /* background-color: rgb(84, 130, 109); */
+    color: rgb(249, 249, 249);
+    padding: 0.5rem 1rem;
+    box-shadow: 0 6px 8px rgba(0, 0, 0, 0.1);
+}
+
+.navbar.bg-light {
+    --bs-bg-opacity: 1;
+     background-color: rgb(238, 238, 238) !important;
+     
+}
+
+ </style>
+
+</head>
+<body>
+
+    <nav class="navbar navbar-expand-lg navbar-light bg-light">
+        <div class="container-fluid">
+            <a class="navbar-brand" href="{% url 'homePage' %}">
+                <img src="{% static 'images/logo.png' %}" alt="Fur Love Logo" class="img-fluid" style="max-height: 50px;">
+                Fur Love
+            </a>
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+
+            <div class="collapse navbar-collapse" id="navbarNav">
+                <ul class="navbar-nav ms-auto">
+                    <li class="nav-item">
+                        <a class="nav-link" href="{% url 'homePage' %}">Home</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="{% url 'aboutPage' %}">About Us</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="{% url 'adoptionPage' %}">Find a Pet</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="{% url 'contactPage' %}">Contact Us</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="{% url 'volunteerPage' %}">Volunteer</a>
+                    </li>
+                </ul>
+            </div>
+        </div>
+    </nav>
+
+<!-- Introduction Section -->
+<section class="pet-intro-section">
+    <div class="container text-center">
+        <div class="intro-content">
+            <h2 class="pet-section-title">Our Rehabilitation Program</h2>
+            <p class="pet-section-description">
+                Our pet rehabilitation program is designed to help animals recover from injuries, surgeries, or behavioral issues. We provide specialized care tailored to each pet's needs, ensuring they receive the support they need to heal and thrive.
+            </p>
+        </div>
+        <div class="intro-image">
+            <img src="{% static 'images/rehab.jpg' %}" alt="Pet Rehabilitation">
+        </div>
+    </div>
+</section>
+
+
+<!-- Rehabilitation Process Section -->
+<section class="rehab-process-section">
+    <div class="container">
+        <h2 class="section-title">Our Steps to Recovery</h2>
+        <div class="row">
+            <div class="col-lg-4 col-md-6 mb-4">
+                <div class="process-step">
+                    <div class="process-step-icon">
+                        <img src="{% static 'images/rehab1.png' %}" alt="Step 1">
+                    </div>
+                    <h4>Assessment</h4>
+                    <p>We start by assessing the pet's needs and condition to create a tailored rehabilitation plan.</p>
+                </div>
+            </div>
+            <div class="col-lg-4 col-md-6 mb-4">
+                <div class="process-step">
+                    <div class="process-step-icon">
+                        <img src="{% static 'images/rehab2.png' %}" alt="Step 2">
+                    </div>
+                    <h4>Care</h4>
+                    <p>Providing the necessary medical care and therapy to aid in the pet's recovery process.</p>
+                </div>
+            </div>
+            <div class="col-lg-4 col-md-6 mb-4">
+                <div class="process-step">
+                    <div class="process-step-icon">
+                        <img src="{% static 'images/rehab3.png' %}" alt="Step 3">
+                    </div>
+                    <h4>Reintegration</h4>
+                    <p>Preparing the pet for a successful reintegration into their new home or environment.</p>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+
+<!-- Success Stories Section -->
+<section class="success-stories-section py-5">
+    <div class="container">
+        <h2 class="section-title text-center">Updates on Our Little Friends</h2>
+        <div id="successStoriesCarousel" class="carousel slide" data-bs-ride="carousel">
+            <div class="carousel-inner">
+                <!-- Story 1 -->
+                <div class="carousel-item active">
+                    <img src="{% static 'images/story1.png' %}" class="d-block w-100" alt="Bella's Journey">
+                    <div class="carousel-caption d-none d-md-block">
+                        <h5>Bella's Journey</h5>
+                        <p>Bella came to us with severe injuries. Through our dedicated care, she made a full recovery and is now living happily with her new family.</p>
+                    </div>
+                </div>
+                <!-- Story 2 -->
+                <div class="carousel-item">
+                    <img src="{% static 'images/story2.png' %}" class="d-block w-100" alt="Max's Transformation">
+                    <div class="carousel-caption d-none d-md-block">
+                        <h5>Max's Transformation</h5>
+                        <p>Max was once a stray with a tough past. Our team worked hard to rehabilitate him, and now he enjoys a loving home.</p>
+                    </div>
+                </div>
+                <!-- Story 3 -->
+                <div class="carousel-item">
+                    <img src="{% static 'images/story3.png' %}" class="d-block w-100" alt="Lucy's Story">
+                    <div class="carousel-caption d-none d-md-block">
+                        <h5>Lucy Finds Hope</h5>
+                        <p>Lucy was rescued from an abusive situation. With our support, she has thrived and is now living a happy life with her new owners.</p>
+                    </div>
+                </div>
+                <!-- Story 4 -->
+                <div class="carousel-item">
+                    <img src="{% static 'images/story4.png' %}" class="d-block w-100" alt="Charlie’s Comeback">
+                    <div class="carousel-caption d-none d-md-block">
+                        <h5>Charlie’s Comeback</h5>
+                        <p>Charlie was found severely malnourished and frightened. With patience and care, he regained his health and confidence, and he now lives in a loving home.</p>
+                    </div>
+                </div>
+                <!-- Story 5 -->
+                <div class="carousel-item">
+                    <img src="{% static 'images/story5.png' %}" class="d-block w-100" alt="Daisy’s Recovery">
+                    <div class="carousel-caption d-none d-md-block">
+                        <h5>Daisy’s Recovery</h5>
+                        <p>Daisy was hit by a car and suffered multiple fractures. After months of rehabilitation, she is now fully recovered and enjoying life with her new family.</p>
+                    </div>
+                </div>
+                <!-- Story 6 -->
+                <div class="carousel-item">
+                    <img src="{% static 'images/story6.png' %}" class="d-block w-100" alt="Rocky’s New Beginning">
+                    <div class="carousel-caption d-none d-md-block">
+                        <h5>Rocky’s New Beginning</h5>
+                        <p>Rocky was a victim of neglect, but with the right care, he has become a joyful and energetic pet, now enjoying his life to the fullest.</p>
+                    </div>
+                </div>
+            </div>
+            <button class="carousel-control-prev" type="button" data-bs-target="#successStoriesCarousel" data-bs-slide="prev">
+                <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+                <span class="visually-hidden">Previous</span>
+            </button>
+            <button class="carousel-control-next" type="button" data-bs-target="#successStoriesCarousel" data-bs-slide="next">
+                <span class="carousel-control-next-icon" aria-hidden="true"></span>
+                <span class="visually-hidden">Next</span>
+            </button>
+        </div>
+    </div>
+</section>
+
+<!-- CTA Section -->
+<section class="cta-section py-5 text-center">
+    <div class="container">
+        <h3 class="cta-heading mb-4">Join Us in Making a Difference</h3>
+        <p class="cta-description mb-5">
+            Your support is crucial in providing essential care to pets in need. Whether through donations, volunteering, or spreading awareness, your actions make a real impact.
+        </p>
+        <a href="{% url 'donate' %}" class="btn btn-accent btn-lg px-4 py-2">Donate</a>
+        <p class="mt-4">Over 1,000 donors have supported us so far!</p>
+    </div>
+</section>
+
+
+
+
+
+
+
+    <!-- Footer Section -->
+ <footer class="bg-light text-center text-lg-start mt-5">
+    <div class="container p-4">
+        <div class="row">
+
+            <!-- Footer Content Left -->
+            <div class="col-lg-6 col-md-12 mb-4 mb-md-0">
+                <h5 class="text-uppercase">Fur Love</h5>
+                <p class="footer-text">
+                    Compassionate care, personalized support, and commitment to matching pets with their perfect forever homes.
+                </p>
+            </div>
+
+            <!-- Footer Content Right -->
+            <div class="col-lg-6 col-md-12 d-flex justify-content-lg-end mb-4 mb-md-0">
+                <div>
+                    <h5 class="text-uppercase">Follow Us</h5>
+                    <a href="https://www.instagram.com" target="_blank">
+                        <img src="{% static 'images/instagram.png' %}" alt="Instagram" width="30" height="30" class="me-3">
+                    </a>
+                    <a href="https://www.twitter.com" target="_blank">
+                        <img src="{% static 'images/twitter.png' %}" alt="Twitter" width="30" height="30" class="me-3">
+                    </a>
+                    <a href="https://www.linkedin.com" target="_blank">
+                        <img src="{% static 'images/linkedin.png' %}" alt="LinkedIn" width="30" height="30">
+                    </a>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div class="text-center p-3">
+        © 2024 Fur Love | All Rights Reserved
+    </div>
+</footer>
+
+</body>
+</html>

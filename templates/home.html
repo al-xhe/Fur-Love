@@ -1,0 +1,372 @@
+{% load static %}
+
+<!DOCTYPE html>
+<html lang="en">
+
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Home-Fur Love</title>
+    <link rel="icon" href="{% static 'images/logo.png' %}" type="image/x-icon">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link
+        href="https://fonts.googleapis.com/css2?family=Edu+VIC+WA+NT+Beginner:wght@400..700&family=Lato:ital,wght@0,100;0,300;0,400;0,700;0,900;1,100;1,300;1,400;1,700;1,900&family=Oswald:wght@200..700&family=Source+Serif+4:ital,opsz,wght@0,8..60,200..900;1,8..60,200..900&display=swap"
+        rel="stylesheet">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.1/dist/js/bootstrap.bundle.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.1/dist/js/bootstrap.bundle.min.js"></script>
+    <link rel="stylesheet" href="{% static 'css/main.css' %}">
+    <style>
+      html, body {
+    height: 100%;
+    margin: 0;
+}
+
+body {
+    display: flex;
+    flex-direction: column;
+}
+
+footer {
+    margin-top: auto;
+    padding: 1rem 0; 
+    background-color: #f8f9fa; 
+}
+
+    </style>
+</head>
+<body>
+
+    <!-- Navbar  -->
+    <nav class="navbar navbar-expand-lg navbar-light bg-light">
+        <div class="container-fluid">
+            <!-- Logo and Brand Name -->
+            <a class="navbar-brand" href="{% url 'homePage' %}">
+                <img src="{% static 'images/logo.png' %}" alt="Fur Love Logo" class="img-fluid" style="max-height: 50px;">
+                Fur Love
+            </a>
+    
+            <!-- Navbar Toggler for Mobile View -->
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+    
+            <!-- Navbar Links -->
+            <div class="collapse navbar-collapse" id="navbarNav">
+                <ul class="navbar-nav ms-auto">
+                    <li class="nav-item">
+                        <a class="nav-link" href="{% url 'homePage' %}">Home</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="{% url 'aboutPage' %}">About Us</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="{% url 'adoptionPage' %}">Find a Pet</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="{% url 'contactPage' %}">Contact Us</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="{% url 'volunteerPage' %}">Volunteer</a>
+                    </li>
+                </ul>
+            </div>
+        </div>
+    </nav>
+    
+
+    <!-- Hero Section -->
+    <section class="hero-section1">
+        <div class="container">
+            <img src="{% static 'images/banner.png' %}" alt="Image" class="img-fluid">
+        </div>
+    </section>
+
+    <br>
+    <br>
+
+    <h3 class="bestFriend">Find your new Best Friend</h3>
+    <div class="text-center mb-4">
+    <a href="{% url 'adoptionPage' %}" class="bestFriend1">Pets Available for Adoption -> </a>
+    
+    <!-- Cards Section -->
+    <section class="container my-5">
+        <div class="grid1"> 
+            <div class="card-pet">
+                <div class="card-img-container">
+                    <a href="{% url 'adoptionPage' %}">
+                    <img src="{% static 'images/Pomeranian.jpeg' %}" class="card-img-top img-fluid" alt="Pet Image">
+                    </a>
+                    <div class="card-overlay">
+                        <h5 class="card-title1">Tommy</h5>
+                    </div>
+                </div>
+            </div>
+        
+            <div class="card-pet">
+                <div class="card-img-container">
+                    <a href="{% url 'adoptionPage' %}">
+                    <img src="{% static 'images/dog2.jpeg' %}" class="card-img-top img-fluid" alt="Pet Image">
+                    </a>
+                    <div class="card-overlay">
+                        <h5 class="card-title1">Taylor</h5>
+                    </div>
+                </div>
+            </div>
+        
+            <div class="card-pet">
+                <div class="card-img-container">
+                    <a href="{% url 'adoptionPage' %}">
+                    <img src="{% static 'images/bunny2.jpeg' %}" class="card-img-top img-fluid" alt="Pet Image">
+                    </a>
+                    <div class="card-overlay">
+                        <h5 class="card-title1">Cindy</h5>
+                    </div>
+                </div>
+            </div>
+        
+            <div class="card-pet">
+                <div class="card-img-container">
+                    <a href="{% url 'adoptionPage' %}">
+                    <img src="{% static 'images/cat1.jpeg' %}" class="card-img-top img-fluid" alt="Pet Image">
+                    </a>
+                    <div class="card-overlay">
+                        <h5 class="card-title1">Bella</h5>
+                    </div>
+                </div>
+            </div>
+    </section>
+
+    <!-- Pet adoption Section-->
+
+    <div class="container my-5">
+        <div class="service-container d-flex align-items-center">
+            <div class="image-container">
+                <img src="{% static 'images/adoption.webp' %}" alt="Adoption Process Image" class="img-fluid rounded">
+            </div>
+            <div class="text-container">
+                <h1>Our Adoption Process</h1>
+                <p class="adoptionprocess">Find out more about the process of adopting our little friends...</p>
+                <a href="{% url 'adoption_process' %}" class="learnmore btn">Learn More</a>
+            </div>
+        </div>
+    </div>
+
+    <div class="container my-5">
+        <div class="service-container d-flex align-items-center">
+            <div class="image-container">
+                <img src="{% static 'images/veterinary.jpeg' %}" alt="Veterinary Services Image" class="img-fluid rounded">
+            </div>
+            <div class="text-container">
+                <h2>Veterinary Services</h2>
+                <p class="adoptionprocess">Our Veterinary Services provide essential care, including checkups, vaccinations, and spaying/neutering, ensuring every pet is healthy and ready for their forever home.</p>
+                <a href="{% url 'veterinary_services' %}" class="learnmore btn">Learn More</a>
+            </div>
+        </div>
+    </div>
+
+    <div class="container my-5">
+        <div class="service-container d-flex align-items-center">
+            <div class="image-container">
+                <img src="{% static 'images/Volunteer.jpg' %}" alt="Volunteer Image" class="img-fluid rounded">
+            </div>
+            <div class="text-container">
+                <h2>Volunteer with Us</h2>
+                <p class="adoptionprocess">Each year, our rehoming and veterinary services touch the lives of 35,000 pets, a feat made possible by the unwavering dedication of our incredible volunteers.</p>
+                <a href="{% url 'volunteer' %}" class="learnmore btn">Learn More</a>
+            </div>
+        </div>
+    </div>
+
+    <div class="container my-5">
+        <div class="service-container d-flex align-items-center">
+            <div class="image-container">
+                <img src="{% static 'images/dog-rehab.jpg' %}" alt="Pet Rehabilitation Image" class="img-fluid rounded">
+            </div>
+            <div class="text-container">
+                <h2>Pet Rehabilitation</h2>
+                <p class="adoptionprocess">Our Pet Rehabilitation program nurtures and supports animals as they recover from trauma, preparing them for a fresh start in a loving home.</p>
+                <a href="{% url 'pet_rehabilitation' %}" class="learnmore btn">Learn More</a>
+            </div>
+        </div>
+    </div>
+
+    <div class="container my-5">
+        <div class="service-container d-flex align-items-center">
+            <div class="image-container">
+                <img src="{% static 'images/success2.jpeg' %}" alt="Post-Adoption Support Image" class="img-fluid rounded">
+            </div>
+            <div class="text-container">
+                <h2>Post-Adoption Support</h2>
+                <p class="adoptionprocess">Our Post-Adoption Support offers ongoing guidance and resources to ensure a smooth transition, helping pets and their new families thrive together.</p>
+                <a href="{% url 'post_adoption_support' %}" class="learnmore btn">Learn More</a>
+            </div>
+        </div>
+    </div>
+
+    <!-- PlaninNg to Adopt Section-->
+    <section class="adopt-planning">
+        <h2 class="planning">PLANNING TO ADOPT A PET?</h2>
+        <div class="content">
+            <div class="box">
+                <img src="{% static 'images/dog-icon.png' %}" alt="How to take care icon" class="icon">
+                <h3 class="box-title">HOW TO TAKE CARE FOR YOUR NEW FRIEND?</h3>
+                <p class="box-text">Let us help you learn how to better care for your pet in order to provide them with a warm environment.</p>
+                <a href="{% url 'careForYourFriend' %}" class="read-more">READ MORE</a>
+            </div>
+    
+            <div class="box">
+                <img src="{% static 'images/cat-icon.png' %}" alt="Success stories icon" class="icon">
+                <h3 class="box-title">SUCCESS STORIES</h3>
+                <p class="box-text">Our Success Stories celebrate the heartwarming journeys of pets finding their forever homes.</p>
+                <a href="{% url 'successStories' %}" class="read-more">READ MORE</a>
+            </div>
+        </div>
+    </section>
+
+    <!-- Why Choose Us Section -->
+    <section class="why-choose">
+        <div class="container">
+            <h2 class="choose">Why Choose FurLove?</h2>
+            <h3 class="choosing">
+                For its compassionate care, personalized support, and commitment to matching pets with their perfect forever homes.
+            </h3>
+    
+            <div class="row1">
+                <div class="col-md-4 col-sm-12">
+                    <div class="card">
+                        <div class="card-body">
+                            <h5 class="card-title">Kind to Everyone</h5>
+                            <p class="card-text">
+                                We believe that...
+                                <ul class="text1">
+                                    <li>every pet needs to be safe, loved, and respected</li>
+                                    <li>people who are great candidates for adoption shouldn’t be put off by complicated processes or one-size-fits-all rules</li>
+                                    <li>people who need to rehome their pets should be empowered to do so without being judged</li>
+                                </ul>
+                            </p>
+                        </div>
+                    </div>
+                </div>
+    
+                <div class="col-md-4 col-sm-12">
+                    <div class="card">
+                        <div class="card-body">
+                            <h5 class="card-title">Advocate Adoption</h5>
+                            <p class="card-text">
+                                This value sits at the heart of everything we do. Adoption reduces the demand for puppy farming, industrial-scale breeding, illegal pet imports, and other forms of exploitation and abuse. We are proud supporters of
+                            </p>
+                            <p class="no-shop">#AdoptDontShop.</p>
+                        </div>
+                    </div>
+                </div>
+    
+                <div class="col-md-4 col-sm-12">
+                    <div class="card">
+                        <div class="card-body">
+                            <h5 class="card-title">Responsible Rehoming</h5>
+                            <p class="card-text">
+                                We're champions of rehoming, but not at any cost. We believe in finding the right match between adopters and pets, not taking risks or rushing. We always prioritize pet welfare and offer a safer, more ethical, and professional alternative to online marketplaces.
+                            </p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <script>
+        
+        document.addEventListener('DOMContentLoaded', function() {
+    const buttons = document.querySelectorAll('.learnmore');
+
+    buttons.forEach(button => {
+        button.addEventListener('click', function(event) {
+            event.preventDefault();
+            const info = this.getAttribute('data-info');
+
+            fetch('/save-info/', {
+                method: 'POST',
+                headers: {
+                    'Content-Type': 'application/json',
+                    'X-CSRFToken': getCookie('csrftoken'),
+                },
+                body: JSON.stringify({ info: info }),
+            })
+            .then(response => response.json())
+            .then(data => {
+                window.location.href = this.href; // Redirect to the new page
+            })
+            .catch(error => console.error('Error:', error));
+        });
+    });
+
+    function getCookie(name) {
+        let cookieValue = null;
+        if (document.cookie && document.cookie !== '') {
+            const cookies = document.cookie.split(';');
+            for (let i = 0; i < cookies.length; i++) {
+                const cookie = cookies[i].trim();
+                if (cookie.substring(0, name.length + 1) === (name + '=')) {
+                    cookieValue = decodeURIComponent(cookie.substring(name.length + 1));
+                    break;
+                }
+            }
+        }
+        return cookieValue;
+    }
+});
+
+    </script>
+    
+    
+
+     <!-- Footer Section -->
+     <footer class="bg-light text-center text-lg-start mt-5">
+        <div class="container p-4">
+            <div class="row">
+
+                <!-- Footer Content Left -->
+                <div class="col-lg-6 col-md-12 mb-4 mb-md-0">
+                    <h5 class="text-uppercase">Fur Love</h5>
+                    <p class="footer-text">
+                        Compassionate care, personalized support, and commitment to matching pets with their perfect forever homes.
+                    </p>
+                </div>
+
+                <!-- Footer Content Right -->
+                <div class="col-lg-6 col-md-12 d-flex justify-content-lg-end mb-4 mb-md-0">
+                    <div>
+                        <h5 class="text-uppercase">Follow Us</h5>
+                        <a href="https://www.instagram.com" target="_blank">
+                            <img src="{% static 'images/instagram.png' %}" alt="Instagram" width="30" height="30" class="me-3">
+                        </a>
+                        <a href="https://www.twitter.com" target="_blank">
+                            <img src="{% static 'images/twitter.png' %}" alt="Twitter" width="30" height="30" class="me-3">
+                        </a>
+                        <a href="https://www.linkedin.com" target="_blank">
+                            <img src="{% static 'images/linkedin.png' %}" alt="LinkedIn" width="30" height="30">
+                        </a>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <div class="text-center p-3">
+            © 2024 Fur Love | All Rights Reserved
+        </div>
+    </footer>
+
+</body>
+</html>
+
+
+   
+   
+
+    
+  

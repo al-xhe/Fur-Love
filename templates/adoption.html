@@ -1,0 +1,214 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+    <!DOCTYPE html>
+    <html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <title>Find a Pet - Fur Love</title>
+        <link rel="icon" href="{% static 'images/logo.png' %}" type="image/x-icon">
+        <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/css/bootstrap.min.css" rel="stylesheet">
+        <link rel="preconnect" href="https://fonts.googleapis.com">
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+        <link href="https://fonts.googleapis.com/css2?family=Edu+VIC+WA+NT+Beginner:wght@400..700&family=Lato:ital,wght@0,100;0,300;0,400;0,700;0,900;1,100;1,300;1,400;1,700;1,900&family=Oswald:wght@200..700&family=Source+Serif+4:ital,opsz,wght@0,8..60,200..900;1,8..60,200..900&display=swap" rel="stylesheet">
+        <link href="https://fonts.googleapis.com/css2?family=Lemon&display=swap" rel="stylesheet">
+        <link rel="stylesheet" href="{% static 'css/main.css' %}">
+    </head>
+    <body>
+        <nav class="navbar navbar-expand-lg navbar-light bg-light">
+            <div class="container-fluid">
+                <!-- Logo and Brand Name -->
+                <a class="navbar-brand" href="{% url 'homePage' %}">
+                    <img src="{% static 'images/logo.png' %}" alt="Fur Love Logo" class="img-fluid" style="max-height: 50px;">
+                    Fur Love
+                </a>
+                <!-- Navbar Toggler for Mobile View -->
+                <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+                    <span class="navbar-toggler-icon"></span>
+                </button>
+                <!-- Navbar Links -->
+                <div class="collapse navbar-collapse" id="navbarNav">
+                    <ul class="navbar-nav ms-auto">
+                        <li class="nav-item">
+                            <a class="nav-link" href="{% url 'homePage' %}">Home</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link" href="{% url 'aboutPage' %}">About Us</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link" href="{% url 'adoptionPage' %}">Find a Pet</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link" href="{% url 'contactPage' %}">Contact Us</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link" href="{% url 'volunteerPage' %}">Volunteer</a>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+        </nav>
+        
+            
+            
+   
+        <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/js/bootstrap.bundle.min.js"></script>
+    </body>
+    </html>
+    
+    <section class="hero">
+        <img src="{% static 'images/boy-dog-window.jpg' %}" alt="Image of a boy and dog" class="img-fluid">
+        
+    </section>
+
+    <section class="gallery">
+        <h2 class="choosetitle">Choose your Friend ...</h2>
+        <p class="chosee-txt">Give a pet a new home by selecting a species of animal available for adoption. We have lots of lovely pets that need a new home – could you give one a second chance?</p>
+        
+        <div class="grid">
+            {% for pet in pets %}
+                <div class="card">
+                    <div class="card-img-container">
+                        <a href="{% url 'pet_detail' pet.pk %}">
+                            <img src="{{pet.image.url}}" class="card-img-top img-fluid" alt="{{ pet.name }}">
+                            <div class="card-overlay">
+                                <h5 class="card-title1">{{ pet.name }}</h5>
+                            </div>
+                        </a>
+                    </div>
+                </div>
+            {% endfor %}
+        </div>
+    </section>
+
+<!--Adoption Process Section-->
+
+    <section class="adoption-process">
+        <div class="process-image">
+            <img src="{% static 'images/footer.png' %}" class="img-fluid rounded shadow" alt="Pet Image">
+        </div>
+        <div class="process-container">
+            <h2 class="our">Our Adoption Process</h2>
+            <p class="our2">Every year, we find new, caring homes for thousands of homeless pets. Each pet is unique, so when you apply to adopt, our team ensures you can offer everything they need to thrive.</p>
+        </div>
+    </section>
+    
+        <h2 class="intro-heading">Adding a new pet to your family is a big decision, but we're here to make it as easy as possible. Learn how you can prepare to adopt and set both you and your new pet up for success.</h2>
+    
+    
+        <div class="info-container">
+            <section class="how-to-adopt">
+                <h2 class="how">How to Adopt a Pet from FurLove:</h2>
+                <br><br>
+                <ol class="steps-list">
+                    <li><strong class="strong">Start Your Search:</strong> <br> Browse our pets currently looking for a new home.</li>
+                   <br>
+                    <li><strong class="strong">Express Your Interest:</strong> <br> Fill out our online form.</li>
+                    <br>
+                    <li><strong class="strong">Application Received:</strong> <br>We’ll confirm we’ve received your application.</li>
+                   <br>
+                    <li><strong class="strong">Contact Within 10 Days:</strong><br> We’ll get in touch with you.</li>
+                   <br>
+                    <li><strong class="strong">Meet the Pet:</strong><br> You’ll be invited to meet the pet.</li>
+                    <br>
+                    <li><strong class="strong">Taking Your Pet Home:</strong><br> Complete the adoption and bring your new friend home.</li>
+                </ol>
+            </section>
+        
+            <section class="adoption-cost">
+                <h2 class="cost">Adoption Costs</h2>
+
+                <ul class="cost-list">
+                    <strong class="strong">Dog:</strong>
+                    <br>
+                    <strong class="strong">Less than 6 months old:</strong> £500
+                    <br>
+                    <strong class="strong">6 to 12 months old:</strong> £400
+                    <br>
+                    <strong class="strong">1 to 7 years old:</strong> £300</li>
+                    <br>
+                    <strong class="strong">8 years and older:</strong> £200</li>
+                   <br><br>
+                   <strong class="strong">Cat:</strong>
+                   <br>
+                    <strong class="strong">Kitten up to 16 weeks old:</strong> £175</li>
+            <br>
+            <strong class="strong">Pair of kittens:</strong> £300</li>
+          <br>
+            <strong class="strong">4 months to 7 years old:</strong> £150</li>
+           <br> 
+            <strong class="strong">8 years and older:</strong> £100
+                    <br><br>
+                    <strong class="strong">Bunny:</strong> £60 (pair £90)</li>
+                  <br><br>
+                    <strong class="strong">Parrot:</strong> £40 (pair £75)</li>
+                   <br><br>
+                    <strong class="strong">Turtles:</strong> £12 (pair £20)</li>
+                   <br><br>
+                    <strong class="strong">Fishes: </strong> £12 (pair £20)</li>
+                </ul>
+            </section>
+        </div>
+        
+    
+        <section class="main-content">
+            <div class="quote-section">
+                <img src="{% static 'images/fee.png' %}" class="img-fluid rounded1 shadow" alt="Adoption Fee">
+            </div>
+            <div class="adoption-requirements">
+                <h2 class="requirements">Adoption Requirements</h2>
+                
+                <p class="to"><strong>To adopt a pet, you must:</strong></strong></p>
+                <ul class="requirements-list">
+                   <p class="require">- Be at least 18 years old
+                    <br>
+                   - Provide a government-issued photo ID</li>
+                    <br>
+                   - Complete a preliminary questionnaire and meet with an Adoption Counselor</li>
+                </p>
+                </ul>
+               
+                <p class="require1">Although meet-and-greets with resident pets are not required, we encourage you to introduce your pet to your potential adoptee to ensure a good fit for your family. Our team members are here to assist you.</p>
+            </div>
+        </section>
+    
+
+    <!-- Footer Section -->
+    <footer class="bg-light text-center text-lg-start mt-5">
+        <div class="container p-4">
+            <div class="row">
+
+                <!-- Footer Content Left -->
+                <div class="col-lg-6 col-md-12 mb-4 mb-md-0">
+                    <h5 class="text-uppercase">Fur Love</h5>
+                    <p class="footer-text">
+                        Compassionate care, personalized support, and commitment to matching pets with their perfect forever homes.
+                    </p>
+                </div>
+
+                <!-- Footer Content Right -->
+                <div class="col-lg-6 col-md-12 d-flex justify-content-lg-end mb-4 mb-md-0">
+                    <div>
+                        <h5 class="text-uppercase">Follow Us</h5>
+                        <a href="https://www.instagram.com" target="_blank">
+                            <img src="{% static 'images/instagram.png' %}" alt="Instagram" width="30" height="30" class="me-3">
+                        </a>
+                        <a href="https://www.twitter.com" target="_blank">
+                            <img src="{% static 'images/twitter.png' %}" alt="Twitter" width="30" height="30" class="me-3">
+                        </a>
+                        <a href="https://www.linkedin.com" target="_blank">
+                            <img src="{% static 'images/linkedin.png' %}" alt="LinkedIn" width="30" height="30">
+                        </a>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <div class="text-center p-3">
+            © 2024 Fur Love | All Rights Reserved
+        </div>
+    </footer>
+
+</body>
+</html>

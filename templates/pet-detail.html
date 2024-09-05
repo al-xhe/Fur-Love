@@ -1,0 +1,124 @@
+{% load static %}
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>{{ pet.name }} - Pet Details</title>
+    <link rel="icon" href="{% static 'images/logo.png' %}" type="image/x-icon">
+    <link rel="stylesheet" href="{% static 'css/main.css' %}">
+    <link href="https://fonts.googleapis.com/css2?family=Open+Sans:ital,wght@0,300..800;1,300..800&display=swap" rel="stylesheet">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/css/bootstrap.min.css" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Open+Sans:ital,wght@0,300..800;1,300..800&family=Roboto+Condensed:ital,wght@0,100..900;1,100..900&display=swap" rel="stylesheet">
+
+    <style>
+        .navbar {
+    /* background-color: rgb(84, 130, 109); */
+    color: rgb(249, 249, 249);
+    padding: 0.5rem 1rem;
+    box-shadow: 0 6px 8px rgba(0, 0, 0, 0.1);
+}
+
+.navbar.bg-light {
+    --bs-bg-opacity: 1;
+     background-color: rgb(238, 238, 238) !important;
+     
+}
+    </style>
+</head>
+<body>
+    <nav class="navbar navbar-expand-lg navbar-light bg-light">
+        <div class="container-fluid">
+            <a class="navbar-brand" href="{% url 'homePage' %}">
+                <img src="{% static 'images/logo.png' %}" alt="Fur Love Logo" class="img-fluid" width="50" height="50">
+                Fur Love
+            </a>
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="collapse navbar-collapse" id="navbarNav">
+                <ul class="navbar-nav ms-auto">
+                    <li class="nav-item"><a class="nav-link" href="{% url 'homePage' %}">Home</a></li>
+                    <li class="nav-item"><a class="nav-link" href="{% url 'aboutPage' %}">About Us</a></li>
+                    <li class="nav-item"><a class="nav-link" href="{% url 'adoptionPage' %}">Find a Pet</a></li>
+                    <li class="nav-item"><a class="nav-link" href="{% url 'contactPage' %}">Contact Us</a></li>
+                    <li class="nav-item"><a class="nav-link" href="{% url 'volunteerPage' %}">Volunteer</a></li>
+                </ul>
+            </div>
+        </div>
+    </nav>
+    <div class="container">
+        <div class="row">
+            <!-- Image Section -->
+            <div class="col-md-6 mb-4 img-container">
+                <img src="{{ pet.image.url }}" alt="{{ pet.name }}" class="img-fluid rounded shadow">
+            </div>
+
+            <!-- Text Section -->
+            <div class="col-md-6">
+                <div class="text-section">
+                    <h1 class="pet-name mb-3">{{ pet.name }}</h1>
+                    <p class="pet-description mb-4"><strong>Description:</strong> {{ pet.description }}</p>
+                    
+                    <div class="info-squares d-flex flex-wrap gap-2 mb-4">
+                        <div class="info-square flex-fill p-3"><strong>Age:</strong> {{ pet.age }}</div>
+                        <div class="info-square flex-fill p-3"><strong>Sex:</strong> {{ pet.sex }}</div>
+                        <div class="info-square flex-fill p-3"><strong>Breed:</strong> {{ pet.breed }}</div>
+                        <div class="info-square flex-fill p-3"><strong>Size:</strong> {{ pet.size }}</div>
+                        <div class="info-square flex-fill p-3"><strong>Color:</strong> {{ pet.color }}</div>
+                    </div>
+
+                    <div class="adoption-info-container p-4 rounded shadow-sm">
+                        <h3 class="fee mb-2">Adoption Fee</h3>
+                        <p class="price fs-4 mb-3">${{ pet.adoption_fee|floatformat:2 }}</p>
+                        <p class="mb-4">Take the first step towards giving {{ pet.name }} a loving home!</p>
+                        <div class="btn-container d-flex gap-2">
+                            <a href="{% url 'adoptPet' pet.id %}" class="btn btn-success">Adopt {{ pet.name }}</a>
+                            <a href="{% url 'adoptionPage' %}" class="btn btn-secondary">Back to Pet Gallery</a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+
+    <!-- Footer Section -->
+    <footer class="bg-light text-center text-lg-start mt-5">
+        <div class="container p-4">
+            <div class="row">
+
+                <!-- Footer Content Left -->
+                <div class="col-lg-6 col-md-12 mb-4 mb-md-0">
+                    <h5 class="text-uppercase">Fur Love</h5>
+                    <p class="footer-text">
+                        Compassionate care, personalized support, and commitment to matching pets with their perfect forever homes.
+                    </p>
+                </div>
+
+                <!-- Footer Content Right -->
+                <div class="col-lg-6 col-md-12 d-flex justify-content-lg-end mb-4 mb-md-0">
+                    <div>
+                        <h5 class="text-uppercase">Follow Us</h5>
+                        <a href="https://www.instagram.com" target="_blank">
+                            <img src="{% static 'images/instagram.png' %}" alt="Instagram" width="30" height="30" class="me-3">
+                        </a>
+                        <a href="https://www.twitter.com" target="_blank">
+                            <img src="{% static 'images/twitter.png' %}" alt="Twitter" width="30" height="30" class="me-3">
+                        </a>
+                        <a href="https://www.linkedin.com" target="_blank">
+                            <img src="{% static 'images/linkedin.png' %}" alt="LinkedIn" width="30" height="30">
+                        </a>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <div class="text-center p-3">
+            © 2024 Fur Love | All Rights Reserved
+        </div>
+    </footer>
+
+</body>
+</html>

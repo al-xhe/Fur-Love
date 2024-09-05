@@ -1,0 +1,297 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Success Stories</title>
+    <link rel="icon" href="{% static 'images/logo.png' %}" type="image/x-icon">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/css/bootstrap.min.css" rel="stylesheet">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Edu+VIC+WA+NT+Beginner:wght@400..700&family=Lato:ital,wght@0,100;0,300;0,400;0,700;0,900;1,100;1,300;1,400;1,700;1,900&family=Oswald:wght@200..700&family=Source+Serif+4:ital,opsz,wght@0,8..60,200..900;1,8..60,200..900&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Lemon&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="{% static 'css/main.css' %}">
+
+    <style>
+.navbar {
+    /* background-color: rgb(84, 130, 109); */
+    color: rgb(249, 249, 249);
+    padding: 0.5rem 1rem;
+    box-shadow: 0 6px 8px rgba(0, 0, 0, 0.1);
+}
+
+.navbar.bg-light {
+    --bs-bg-opacity: 1;
+     background-color: rgb(238, 238, 238) !important;
+     
+}
+body {
+    font-family: 'Roboto', sans-serif;
+    background-color: #e4dfdf;
+    margin: 0;
+    padding: 0;
+}
+
+.container {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 0 15px;
+}
+
+.success-stories-hero {
+    padding: 60px 0;
+}
+
+.success-stories-title {
+    font-size: 2.5rem;
+    margin-bottom: 20px;
+}
+
+.success-stories-intro {
+    font-size: 1.25rem;
+}
+
+.success-stories-grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr); /* 3 columns for 3 stories */
+    gap: 30px; /* Spacing between the cards */
+}
+
+@media (max-width: 992px) {
+    .success-stories-grid {
+        grid-template-columns: repeat(2, 1fr); /* 2 columns for medium-sized screens */
+    }
+}
+
+@media (max-width: 768px) {
+    .success-stories-grid {
+        grid-template-columns: 1fr; /* 1 column for small screens */
+    }
+}
+
+
+.success-story {
+    background-color: #fff;
+    padding: 20px;
+    border-radius: 10px;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+}
+
+.story-image img {
+    width: 100%;
+    height: auto;
+    border-radius: 10px;
+}
+
+.story-text {
+    padding: 20px 0;
+}
+
+.story-title {
+    font-size: 1.75rem;
+    margin-bottom: 10px;
+}
+
+.story-description {
+    font-size: 1rem;
+    line-height: 1.5;
+}
+
+.get-involved {
+    padding: 60px 0;
+    background-color: #f8f9fa;
+}
+
+.get-involved-title {
+    font-size: 2rem;
+    margin-bottom: 20px;
+}
+
+.get-involved-text {
+    font-size: 1.25rem;
+    margin-bottom: 20px;
+}
+
+@media (max-width: 768px) {
+    .success-stories-title {
+        font-size: 2rem;
+    }
+
+    .story-title {
+        font-size: 1.5rem;
+    }
+
+    .success-stories-intro, .story-description {
+        font-size: 1rem;
+    }
+
+    .get-involved-title {
+        font-size: 1.75rem;
+    }
+
+    .get-involved-text {
+        font-size: 1rem;
+    }
+}
+
+@media (max-width: 576px) {
+    .success-stories-title {
+        font-size: 1.75rem;
+    }
+
+    .story-title {
+        font-size: 1.25rem;
+    }
+
+    .success-stories-intro, .story-description {
+        font-size: 0.9rem;
+    }
+
+    .get-involved-title {
+        font-size: 1.5rem;
+    }
+
+    .get-involved-text {
+        font-size: 0.9rem;
+    }
+}
+
+
+    </style>
+</head>
+<body>
+    <nav class="navbar navbar-expand-lg navbar-light bg-light">
+        <div class="container-fluid">
+            <!-- Logo and Brand Name -->
+            <a class="navbar-brand" href="{% url 'homePage' %}">
+                <img src="{% static 'images/logo.png' %}" alt="Fur Love Logo" class="img-fluid" style="max-height: 50px;">
+                Fur Love
+            </a>
+            <!-- Navbar Toggler for Mobile View -->
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            <!-- Navbar Links -->
+            <div class="collapse navbar-collapse" id="navbarNav">
+                <ul class="navbar-nav ms-auto">
+                    <li class="nav-item">
+                        <a class="nav-link" href="{% url 'homePage' %}">Home</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="{% url 'aboutPage' %}">About Us</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="{% url 'adoptionPage' %}">Find a Pet</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="{% url 'contactPage' %}">Contact Us</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="{% url 'volunteerPage' %}">Volunteer</a>
+                    </li>
+                </ul>
+            </div>
+        </div>
+    </nav>
+    
+        
+
+
+    <main class="success-stories">
+        <section class="success-stories-hero text-center">
+            <div class="container">
+                <h1 class="success-stories-title">Heartwarming Success Stories</h1>
+                <p class="success-stories-intro">Discover the incredible journeys of pets who found their forever homes through Fur Love. Each story is a testament to the bond between humans and their furry companions.</p>
+            </div>
+        </section>
+
+        <section class="success-stories-content">
+            <div class="container">
+                <div class="success-stories-grid">
+                    <!-- Story 1 -->
+                    <div class="success-story">
+                        <div class="story-image">
+                            <img src="{% static 'images/success2.jpeg' %}" alt="Bella and Max">
+                        </div>
+                        <div class="story-text">
+                            <h2 class="story-title">Bella Finds Her Forever Family</h2>
+                            <p class="story-description">Bella, a sweet Labrador mix, was found wandering the streets. After being rescued by Fur Love, she was adopted by the Smith family, who had been looking for a loyal companion. Bella has brought immense joy and laughter into their home, and her story has become a favorite among our volunteers.</p>
+                        </div>
+                    </div>
+
+                    <!-- Story 2 -->
+                    <div class="success-story">
+                        <div class="story-image">
+                            <img src="{% static 'images/success3.jpeg' %}" alt="Charlie and Sarah">
+                        </div>
+                        <div class="story-text">
+                            <h2 class="story-title">Charlie’s New Beginning</h2>
+                            <p class="story-description">Charlie, a playful Beagle, was given up by his previous owner due to relocation. Fur Love stepped in to find him a new home. Sarah, a single mom, and her daughter fell in love with Charlie at first sight. Now, he enjoys daily walks and cuddle sessions with his new family.</p>
+                        </div>
+                    </div>
+
+                    <!-- Story 3 -->
+                    <div class="success-story">
+                        <div class="story-image">
+                            <img src="{% static 'images/cat1.jpeg' %}" alt="Max and the Johnsons">
+                        </div>
+                        <div class="story-text">
+                            <h2 class="story-title">Max’s Journey from the Shelter to Stardom</h2>
+                            <p class="story-description">Max, a charming tabby cat, was found in a local shelter. After his adoption by the Johnsons, Max became an internet sensation thanks to his playful antics and adorable videos. His story has inspired many to adopt and give pets a second chance.</p>                 
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section class="get-involved text-center">
+            <div class="container">
+                <h2 class="get-involved-title">Join Us in Creating More Success Stories</h2>
+                <p class="get-involved-text">Your support helps us continue our mission of finding loving homes for pets in need. Whether you want to adopt, volunteer, or donate, every effort counts. Together, we can create more heartwarming stories like these.</p>
+                <a href="{% url 'contactPage' %}" class="btn btn-primary">Get Involved</a>
+            </div>
+        </section>
+    </main>
+
+
+
+     <!-- Footer Section -->
+     <footer class="bg-light text-center text-lg-start mt-5">
+        <div class="container p-4">
+            <div class="row">
+                <!-- Footer Content Left -->
+                <div class="col-lg-6 col-md-12 mb-4 mb-md-0">
+                    <h5 class="text-uppercase">Fur Love</h5>
+                    <p class="footer-text">
+                        Compassionate care, personalized support, and commitment to matching pets with their perfect forever homes.
+                    </p>
+                </div>
+
+                <!-- Footer Content Right -->
+                <div class="col-lg-6 col-md-12 d-flex justify-content-lg-end mb-4 mb-md-0">
+                    <div>
+                        <h5 class="text-uppercase">Follow Us</h5>
+                        <a href="https://www.instagram.com" target="_blank">
+                            <img src="{% static 'images/instagram.png' %}" alt="Instagram" width="30" height="30" class="me-3">
+                        </a>
+                        <a href="https://www.twitter.com" target="_blank">
+                            <img src="{% static 'images/twitter.png' %}" alt="Twitter" width="30" height="30" class="me-3">
+                        </a>
+                        <a href="https://www.linkedin.com" target="_blank">
+                            <img src="{% static 'images/linkedin.png' %}" alt="LinkedIn" width="30" height="30">
+                        </a>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <div class="text-center p-3">
+            © 2024 Fur Love | All Rights Reserved
+        </div>
+    </footer>
+</body>
+</html>

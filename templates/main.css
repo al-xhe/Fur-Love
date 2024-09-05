@@ -1,0 +1,113 @@
+
+.navbar {
+    background-color: rgb(84, 130, 109); 
+    color: white;
+}
+
+.navbar .nav-link {
+color: rgb(18, 70, 38);
+}
+
+.navbar .nav-link:hover {
+color: rgb(85, 188, 102); 
+}
+
+.navbar-brand img {
+        height: 50px;
+    }
+
+    .navbar-brand {
+        font-family: "Edu VIC WA NT Beginner", cursive;
+    }
+
+    body {
+background-color: rgb(192, 242, 200);
+color: rgb(54, 69, 79);
+font-family: "Lato", sans-serif;
+text-align: center;
+}
+
+.title {
+font-family: "Inknut Antiqua", serif;
+font-weight: bold;
+padding: 30px;
+font-size: 36px;
+color: rgb(14, 14, 16);
+text-shadow: 1px 1px rgb(54, 69, 79);
+}
+
+.text {
+text-align: left;
+margin-left: 30px;
+font-size: 20px;
+font-style: italic;
+color: rgb(54, 69, 79);
+}
+
+.hero-section {
+display: flex;
+align-items: center;
+justify-content: space-between;
+margin: 30px 0;
+background-color: rgb(169, 213, 180);
+padding: 20px;
+border-radius: 20px;
+box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.1);
+}
+
+.hero-section img {
+width: 40%;
+height: 220px;
+border-radius: 20px;
+box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.1);
+}
+
+.main {
+text-align: left;
+margin-top: 60px;
+margin-left: 30px;
+font-family: "Inknut Antiqua", serif;
+font-weight: bold;
+font-size: 28px;
+color: rgb(14, 14, 16);
+text-shadow: 1px 1px rgb(54, 69, 79);
+}
+
+.join {
+text-align: center;
+font-family: "League Gothic", sans-serif;
+font-size: 22px;
+margin-top: 60px;
+color: rgb(54, 69, 79);
+font-weight: bold;
+}
+
+footer {
+    background-color: rgb(19, 93, 143);
+    color: rgb(3, 1, 1);
+    padding: 20px 0;
+    font-weight: bold;
+}
+
+footer h5, footer p {
+    color: rgb(1, 5, 2); 
+    
+}
+
+footer a {
+    color: white;
+   
+}
+
+.text-uppercase{
+    font-family: "Edu VIC WA NT Beginner", cursive;
+    font-weight: bold;
+    margin-bottom: 20px;
+
+}
+
+.footer-text{
+    font-size: 18px;
+    font-style: italic;
+    font-weight: lighter;
+}

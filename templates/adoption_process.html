@@ -1,0 +1,172 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Adoption Process - Fur Love</title>
+    <link rel="icon" href="{% static 'images/logo.png' %}" type="image/x-icon">
+    <link href="https://fonts.googleapis.com/css2?family=Lato:wght@300;400;700&display=swap" rel="stylesheet">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="{% static 'css/main.css' %}">
+<style>
+body{
+    background-color:#e6e6e6;
+}
+.navbar {
+    /* background-color: rgb(84, 130, 109); */
+    color: rgb(249, 249, 249);
+    padding: 0.5rem 1rem;
+    box-shadow: 0 6px 8px rgba(0, 0, 0, 0.1);
+}
+
+.navbar.bg-light {
+    --bs-bg-opacity: 1;
+     background-color: rgb(238, 238, 238) !important;
+     
+}
+</style>
+</head>
+
+<body>
+    <!-- Navbar -->
+    <nav class="navbar navbar-expand-lg navbar-light bg-light">
+        <div class="container-fluid">
+            <!-- Logo and Brand Name -->
+            <a class="navbar-brand" href="{% url 'homePage' %}">
+                <img src="{% static 'images/logo.png' %}" alt="Fur Love Logo" class="img-fluid" style="max-height: 50px;">
+                Fur Love
+            </a>
+            <!-- Navbar Toggler for Mobile View -->
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            <!-- Navbar Links -->
+            <div class="collapse navbar-collapse" id="navbarNav">
+                <ul class="navbar-nav ms-auto">
+                    <li class="nav-item">
+                        <a class="nav-link" href="{% url 'homePage' %}">Home</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="{% url 'aboutPage' %}">About Us</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="{% url 'adoptionPage' %}">Find a Pet</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="{% url 'contactPage' %}">Contact Us</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="{% url 'volunteerPage' %}">Volunteer</a>
+                    </li>
+                </ul>
+            </div>
+        </div>
+    </nav>
+    
+        
+
+    <section class="adoption-hero-section">
+        <img src="{% static 'images/pet.jpg' %}" alt="Adopt a Pet" class="adoption-hero-image">
+        <div class="container adoption-hero-content">
+            <div class="row justify-content-center">
+                <div class="col-md-8">
+                    <h1 class="adoption-hero-title">Our Adoption Process</h1>
+                    <p class="adoption-hero-lead">Discover the steps to welcoming a new furry friend into your family. We're here to guide you every step of the way!</p>
+                    <a href="{% url 'adoptionPage' %}" class="start-adoption-btn">Start Your Adoption Journey</a>
+                </div>
+            </div>
+        </div>
+    </section>
+
+  <!-- Detailed Adoption Process -->
+  <section class="container my-5 adoption-process-section">
+    <div class="row">
+        <!-- Step 1: Application -->
+        <div class="col-md-6 col-lg-4 process-step mx-auto mb-4">
+            <div class="step-icon">📝</div>
+            <h2>Step 1: Application</h2>
+            <p>Begin by submitting an adoption application online or in person. Our team will review it and contact you for any additional information.</p>
+            <p><strong>Tip:</strong> Include detailed information about your household and experience with pets to speed up the review process.</p>
+        </div>
+
+        <!-- Step 2: Interview -->
+        <div class="col-md-6 col-lg-4 process-step mx-auto mb-4">
+            <div class="step-icon">💬</div>
+            <h2>Step 2: Interview</h2>
+            <p>We'll schedule a friendly interview to discuss your application and ensure the pet you've chosen is the perfect match for your home.</p>
+            <p><strong>Tip:</strong> Be ready to discuss your daily routine, living environment, and expectations.</p>
+        </div>
+
+        <!-- Step 3: Home Visit -->
+        <div class="col-md-6 col-lg-4 process-step mx-auto mb-4">
+            <div class="step-icon">🏠</div>
+            <h2>Step 3: Home Visit</h2>
+            <p>One of our representatives will visit your home to ensure it’s a safe and comfortable environment for the pet.</p>
+            <p><strong>Tip:</strong> Prepare a dedicated space for your new pet and ensure the home is pet-proofed.</p>
+        </div>
+
+        <!-- Step 4: Adoption Fee -->
+        <div class="col-md-6 col-lg-4 process-step mx-auto mb-4">
+            <div class="step-icon">💰</div>
+            <h2>Step 4: Adoption Fee</h2>
+            <p>The adoption fee helps cover the cost of care and medical treatments for the pet. Your contribution ensures they are healthy and ready to join your family.</p>
+            <p><strong>Did you know?</strong> This fee also supports other animals in our care, providing them with the resources they need to find their forever homes.</p>
+        </div>
+
+        <!-- Step 5: Bringing Your Pet Home -->
+        <div class="col-md-6 col-lg-4 process-step mx-auto mb-4">
+            <div class="step-icon">🚗</div>
+            <h2>Step 5: Bringing Your Pet Home</h2>
+            <p>Once everything is in place, you can bring your new pet home! We provide all the necessary information and ongoing support to ensure a smooth transition.</p>
+            <p><strong>
+
+                Support:</strong> We offer post-adoption support, including tips on training, feeding, and integrating your new pet into the family.</p>
+            </div>
+    
+            <!-- Step 6: Follow-Up -->
+            <div class="col-md-6 col-lg-4 process-step mx-auto mb-4">
+                <div class="step-icon">📞</div>
+                <h2>Step 6: Follow-Up</h2>
+                <p>Our commitment doesn't end when you take your pet home. We'll follow up with you to ensure everything is going well and to offer additional support if needed.</p>
+                <p><strong>Stay Connected:</strong> We love to hear updates! Share your pet's journey with us on our social media channels.</p>
+            </div>
+        </div>
+    </section>
+    
+
+<!-- Footer -->
+    <footer class="bg-light text-center text-lg-start mt-5">
+        <div class="container p-4">
+            <div class="row">
+                <div class="col-lg-6 col-md-12 mb-4 mb-md-0">
+                    <h5 class="text-uppercase">Fur Love</h5>
+                    <p class="footer-text">
+                        Compassionate care, personalized support, and commitment to matching pets with their perfect forever homes.
+                    </p>
+                </div>
+                <div class="col-lg-6 col-md-12 d-flex justify-content-lg-end mb-4 mb-md-0">
+                    <div>
+                        <h5 class="text-uppercase">Follow Us</h5>
+                        <a href="https://www.instagram.com" target="_blank">
+                            <img src="{% static 'images/instagram.png' %}" alt="Instagram" width="30" height="30" class="me-3">
+                        </a>
+                        <a href="https://www.twitter.com" target="_blank">
+                            <img src="{% static 'images/twitter.png' %}" alt="Twitter" width="30" height="30" class="me-3">
+                        </a>
+                        <a href="https://www.linkedin.com" target="_blank">
+                            <img src="{% static 'images/linkedin.png' %}" alt="LinkedIn" width="30" height="30">
+                        </a>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="text-center p-3">
+            © 2024 Fur Love | All Rights Reserved
+        </div>
+    </footer>
+
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+</body>
+</html>

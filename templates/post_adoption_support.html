@@ -1,0 +1,290 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Post Adoption</title>
+    <link rel="icon" href="{% static 'images/logo.png' %}" type="image/x-icon">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link
+        href="https://fonts.googleapis.com/css2?family=Edu+VIC+WA+NT+Beginner:wght@400..700&family=Lato:ital,wght@0,100;0,300;0,400;0,700;0,900;1,100;1,300;1,400;1,700;1,900&family=Oswald:wght@200..700&family=Source+Serif+4:ital,opsz,wght@0,8..60,200..900;1,8..60,200..900&display=swap"
+        rel="stylesheet">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.1/dist/js/bootstrap.bundle.min.js"></script>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/css/bootstrap.min.css" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Lobster&family=Open+Sans:wght@400;600&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Lemon&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="{% static 'css/main.css' %}">
+   
+    <style>
+   body {
+    font-family: 'Roboto', sans-serif;
+    margin: 0;
+    padding: 0;
+    background-color: #f0f4f8;
+    color: #333;
+}
+
+a {
+    text-decoration: none;
+    color: inherit;
+}
+
+h1, h2, h3 {
+    margin-top: 0;
+    margin-bottom: 0.5rem;
+}
+
+.resources-section {
+    padding: 2rem 0;
+}
+
+.resource-card {
+    margin-bottom: 2rem;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    border-radius: 8px;
+    overflow: hidden;
+}
+
+.resource-img {
+    width: 100%;
+    height: auto;
+    border-bottom: 1px solid #ddd;
+}
+
+.resource-body {
+    padding: 1rem;
+    text-align: center;
+}
+
+.post-btn-primary {
+    background-color: #007bff;
+    color: white;
+    margin-top: 1rem;
+}
+
+.container {
+    padding-left: 2rem;  /* Adjust these values */
+    padding-right: 2rem; /* Adjust these values */
+}
+
+.navbar {
+    /* background-color: rgb(84, 130, 109); */
+    color: rgb(255, 252, 252);
+    padding: 0.5rem 1rem;
+    box-shadow: 0 6px 8px rgba(0, 0, 0, 0.1);
+}
+
+.navbar.bg-light {
+    --bs-bg-opacity: 1;
+     background-color: rgb(238, 238, 238) !important;
+     
+}
+
+
+    </style>
+</head>
+<body>
+
+    <nav class="navbar navbar-expand-lg navbar-light bg-light">
+        <div class="container-fluid">
+            <!-- Logo and Brand Name -->
+            <a class="navbar-brand" href="{% url 'homePage' %}">
+                <img src="{% static 'images/logo.png' %}" alt="Fur Love Logo" class="img-fluid" style="max-height: 50px;">
+                Fur Love
+            </a>
+            <!-- Navbar Toggler for Mobile View -->
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            <!-- Navbar Links -->
+            <div class="collapse navbar-collapse" id="navbarNav">
+                <ul class="navbar-nav ms-auto">
+                    <li class="nav-item">
+                        <a class="nav-link" href="{% url 'homePage' %}">Home</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="{% url 'aboutPage' %}">About Us</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="{% url 'adoptionPage' %}">Find a Pet</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="{% url 'contactPage' %}">Contact Us</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="{% url 'volunteerPage' %}">Volunteer</a>
+                    </li>
+                </ul>
+            </div>
+        </div>
+    </nav>
+    
+        
+    
+        
+
+    <!-- Hero Section -->
+    <section class="post-hero-section text-center py-5">
+        <div class="container">
+            <h1 class="post-hero-title">Welcome to Your New Family Member's Journey</h1>
+            <p class="post-hero-subtitle">We're here to support you every step of the way.</p>
+        </div>
+    </section>
+
+     <!-- Main Content -->
+     
+        <div class="container">
+            <div class="text-center mb-5">
+                <h2 class="section-title">Post Adoption Support</h2>
+                <p class="section-description">Congratulations on your new furry friend! Discover valuable resources and support for a smooth transition.</p>
+            </div>
+
+            <!-- Resources Section -->
+<section class="resources-section">
+    <div class="container">
+        <div class="row justify-content-center">
+            <div class="col-md-4">
+                <div class="resource-card">
+                    <img src="{% static 'images/healthcare.jpg' %}" class="resource-img" alt="Healthcare">
+                    <div class="resource-body">
+                        <h5 class="resource-title">Healthcare Tips</h5>
+                        <p class="resource-text">Discover essential tips to ensure your pet’s health and happiness.</p>
+                        <a href="{% url 'veterinary_services' %}" class="btn post-btn-primary">Learn More</a>
+                    </div>
+                </div>
+            </div>
+            <div class="col-md-4">
+                <div class="resource-card">
+                    <img src="{% static 'images/training.jpg' %}" class="resource-img" alt="Training">
+                    <div class="resource-body">
+                        <h5 class="resource-title">Training Guides</h5>
+                        <p class="resource-text">Explore helpful training guides for a smooth adjustment period.</p>
+                        <a href="{% url 'pet_rehabilitation' %}" class="btn post-btn-primary">Learn More</a>
+                    </div>
+                </div>
+            </div>
+            <div class="col-md-4">
+                <div class="resource-card">
+                    <img src="{% static 'images/nutrition.jpg' %}" class="resource-img" alt="Nutrition">
+                    <div class="resource-body">
+                        <h5 class="resource-title">Nutrition Advice</h5>
+                        <p class="resource-text">Get expert advice on the best nutrition for your pet’s well-being.</p>
+                        <a href="{% url 'homePage' %}" class="btn post-btn-primary">Learn More</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+
+
+           <!-- Testimonial Section -->
+<section class="testimonial-section my-5">
+    <div class="container">
+        <h3 class="testimonial-title">What Our Adoptive Families Say</h3>
+        <div id="testimonialCarousel" class="carousel slide" data-bs-ride="carousel">
+            <div class="carousel-inner">
+                <div class="carousel-item active">
+                    <div class="testimonial-item">
+                        <div class="testimonial-avatar">
+                            <img src="{% static 'images/avatar1.jpg' %}" alt="Sarah & Max" class="img-fluid rounded-circle">
+                        </div>
+                        <blockquote class="testimonial-quote">
+                            <p>"Adopting our dog from Fur Love was the best decision we've ever made. The support has been phenomenal!"</p>
+                            <footer class="testimonial-footer">Sarah & Max</footer>
+                        </blockquote>
+                    </div>
+                </div>
+                <div class="carousel-item">
+                    <div class="testimonial-item">
+                        <div class="testimonial-avatar">
+                            <img src="{% static 'images/avatar2.jpg' %}" alt="John & Emma" class="img-fluid rounded-circle">
+                        </div>
+                        <blockquote class="testimonial-quote">
+                            <p>"We were nervous first-time pet owners, but Fur Love provided us with all the guidance we needed."</p>
+                            <footer class="testimonial-footer">John & Emma</footer>
+                        </blockquote>
+                    </div>
+                </div>
+                <div class="carousel-item">
+                    <div class="testimonial-item">
+                        <div class="testimonial-avatar">
+                            <img src="{% static 'images/avatar3.jpg' %}" alt="Emily & Noah" class="img-fluid rounded-circle">
+                        </div>
+                        <blockquote class="testimonial-quote">
+                            <p>"Our cat has brought so much joy into our lives. The post-adoption support has been excellent!"</p>
+                            <footer class="testimonial-footer">Emily & Noah</footer>
+                        </blockquote>
+                    </div>
+                </div>
+            </div>
+            <button class="carousel-control-prev" type="button" data-bs-target="#testimonialCarousel" data-bs-slide="prev">
+                <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+                <span class="visually-hidden">Previous</span>
+            </button>
+            <button class="carousel-control-next" type="button" data-bs-target="#testimonialCarousel" data-bs-slide="next">
+                <span class="carousel-control-next-icon" aria-hidden="true"></span>
+                <span class="visually-hidden">Next</span>
+            </button>
+        </div>
+    </div>
+</section>
+
+<!-- Photo Gallery Section -->
+<section class="gallery-section my-5">
+    <div class="container">
+        <h3 class="gallery-title">Our Happy Pets</h3>
+        <div class="gallery-grid">
+            <div class="gallery-item">
+                <img src="{% static 'images/pet1.jpg' %}" class="gallery-img" alt="Happy Pet 1">
+            </div>
+            <div class="gallery-item">
+                <img src="{% static 'images/pet2.jpg' %}" class="gallery-img" alt="Happy Pet 2">
+            </div>
+            <div class="gallery-item">
+                <img src="{% static 'images/pet3.jpg' %}" class="gallery-img" alt="Happy Pet 3">
+            </div>
+        </div>
+    </div>
+</section>
+
+
+<!-- Footer Section -->
+<footer class="bg-light text-center text-lg-start mt-5">
+    <div class="p-4 w-100">
+        <div class="row mx-0">
+            <!-- Footer Content Left -->
+            <div class="col-lg-6 col-md-12 mb-4 mb-md-0">
+                <h5 class="text-uppercase">Fur Love</h5>
+                <p class="footer-text">
+                    Compassionate care, personalized support, and commitment to matching pets with their perfect forever homes.
+                </p>
+            </div>
+
+            <!-- Footer Content Right -->
+            <div class="col-lg-6 col-md-12 d-flex justify-content-lg-end mb-4 mb-md-0">
+                <div>
+                    <h5 class="text-uppercase">Follow Us</h5>
+                    <a href="https://www.instagram.com" target="_blank">
+                        <img src="{% static 'images/instagram.png' %}" alt="Instagram" width="30" height="30" class="me-3">
+                    </a>
+                    <a href="https://www.twitter.com" target="_blank">
+                        <img src="{% static 'images/twitter.png' %}" alt="Twitter" width="30" height="30" class="me-3">
+                    </a>
+                    <a href="https://www.linkedin.com" target="_blank">
+                        <img src="{% static 'images/linkedin.png' %}" alt="LinkedIn" width="30" height="30">
+                    </a>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div class="w-100 bg-light">
+        <div class="text-center p-3">
+            © 2024 Fur Love | All Rights Reserved
+        </div>
+    </div>
+</footer>
